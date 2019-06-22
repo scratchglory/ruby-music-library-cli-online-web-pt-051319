@@ -1,4 +1,8 @@
+require_relative 'concerns/findable'
+
 class Genre
+  extend Concerns::Findable
+  
   attr_accessor :name
   attr_reader :songs, :genres
   @@all = []
@@ -6,7 +10,6 @@ class Genre
   def initialize(name)
     @name = name
     @songs = []
-    @@all
   end
   
   def self.all

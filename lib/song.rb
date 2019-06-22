@@ -7,7 +7,7 @@ class Song
   
   ##initialize: can be invoked with an optional second argument, an Artist object to be assigned to the song's 'artist' property (song belongs to artist)
   
-  def initialize(name, artist = nil, genre = nil) # I think this is hardcoded?
+  def initialize(name, artist = nil, genre = nil) 
     @name = name
     self.artist = artist if artist
     self.genre = genre if genre
@@ -50,6 +50,6 @@ class Song
   end 
   
   def self.find_or_create_by_name(name)
-    self.all
+    self.find_by_name(name) || self.create(name)
   end
 end

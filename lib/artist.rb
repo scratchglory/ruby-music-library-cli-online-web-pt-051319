@@ -1,13 +1,14 @@
 require 'pry'
-
-class Artist  
+require_relative 'concerns/findable'
+class Artist 
+ extend Concerns::Findable
+  
   attr_accessor :name, :songs
   @@all = []
   
   def initialize(name)
     @name = name
     @songs = []
-    # @@all
   end
   
   def self.all
