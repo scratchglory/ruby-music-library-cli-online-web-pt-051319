@@ -1,4 +1,3 @@
-require_relative 'concerns/findable'
 
 class Genre
   extend Concerns::Findable
