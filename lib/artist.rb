@@ -29,16 +29,16 @@ class Artist
    new_artist
   end
   
-  
       # Does not assign the artist if the song already has an artist
   def add_song(song)  
-    song.artist = self unless song.artist
-      unless songs.include?(song)
-      @songs << song 
-    end
+      song.artist = self unless song.artist
+      @songs << song unless songs.include?(song)
+    # end
   end
   
   def genres
-      Song.genres
+    songs.collect {|song| song.genre}.uniq
   end
+  
+  
 end

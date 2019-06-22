@@ -1,5 +1,6 @@
 class Genre
-  attr_accessor :name, :songs
+  attr_accessor :name
+  attr_reader :songs, :genres
   @@all = []
   
   def initialize(name)
@@ -27,4 +28,9 @@ class Genre
    new_genre.save
    new_genre
   end
+  
+  def artists       # returning a collection of artists for all of the genre's songs
+    songs.map {|song| song.artist}.uniq
+  end
+  
 end
