@@ -63,7 +63,7 @@ class MusicLibraryController
         puts "Playing #{song_title.name} by #{song_title.artist.name}" if song_title
       end
     end
-  # end
+  end
 
   #     def play_song
   #   puts "Which song number would you like to play?"
