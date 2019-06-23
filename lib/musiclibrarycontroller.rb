@@ -60,7 +60,7 @@ class MusicLibraryController
       input = gets.to_i
       if (1..Song.all.length).include?(input)
         song_title = Song.all.sort_by(&:name).uniq[input - 1]
-        puts "Playing #{song_title.name} by #{song_title.artist.name}" if song_title
+        puts "Playing #{song_title.name} by #{song_title.artist.name}" 
       end
     end
   end
