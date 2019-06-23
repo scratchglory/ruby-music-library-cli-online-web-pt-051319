@@ -22,9 +22,9 @@ class MusicLibraryController
    
    # "1. Thundercat - For Love I Come -dance"
    def list_songs
-     sorted_songs = Song.all.sort_by(&:name).uniq     # Song.all.sort_by {|song| song.name}
-     sorted_songs.each_with_index {|s, i| puts "#{i + 1}. #{s.artist.name} - #{s.name} - #{s.genre.name}"}
-   end
+    sorted_songs = Song.all.sort_by(&:name).uniq
+    sorted_songs.each_with_index { |s, i| puts "#{i + 1}. #{s.artist.name} - #{s.name} - #{s.genre.name}" }
+  end
    
    
    
