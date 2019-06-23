@@ -50,7 +50,6 @@ class MusicLibraryController
       puts "Please enter the name of a genre:"
      input = gets.chomp
      if Genre.find_by_name(input)
-      # binding.pry 
        sorted_genre = Genre.find_by_name(input).songs.sort_by(&:name).uniq 
        sorted_genre.each_with_index {|g, i| puts "#{i + 1}. #{g.artist.name} - #{g.name}"}
      end
