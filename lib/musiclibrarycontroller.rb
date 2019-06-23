@@ -26,6 +26,8 @@ class MusicLibraryController
      sorted_songs.each_with_index {|s, i| puts "#{i + 1}. #{s.artist.name} - #{s.name} - #{s.genre.name}"}
    end
    
+   
+   
    def list_artists
      sorted_artist = Artist.all.sort_by(&:name).uniq    
      sorted_artist.each_with_index {|a, i| puts "#{i + 1}. #{a.name}"}
