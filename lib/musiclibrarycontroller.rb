@@ -55,24 +55,24 @@ class MusicLibraryController
      end
     end
     
-    def play_song
-      puts "Which song number would you like to play?"
-      input = gets.to_i
-      if (1..Song.all.length).include?(input)
-        song_title = Song.all.sort_by(&:name).uniq[input - 1]
-        puts "Playing #{song_title.name} by #{song_title.artist.name}" 
-      end
-    end
-  end
-
-  #     def play_song
-  #   puts "Which song number would you like to play?"
-  #   input = gets.chomp
-  #     if input.to_i > 0 && input.to_i < 6
-  #       song = Song.all.sort_by(&:name).uniq[input.to_i - 1]
-  #       puts "Playing #{song.name} by #{song.artist.name}" 
+  #   def play_song
+  #     puts "Which song number would you like to play?"
+  #     input = gets.to_i
+  #     if (1..Song.all.length).include?(input)
+  #       song_title = Song.all.sort_by(&:name).uniq[input - 1]
+  #       puts "Playing #{song_title.name} by #{song_title.artist.name}" if song_title
   #     end
+  #   end
   # end
+
+      def play_song
+    puts "Which song number would you like to play?"
+    input = gets.chomp
+      if input.to_i > 0 && input.to_i < 6
+        song = Song.all.sort_by(&:name).uniq[input.to_i - 1]
+        puts "Playing #{song.name} by #{song.artist.name}" 
+      end
+  end
     
     
     
